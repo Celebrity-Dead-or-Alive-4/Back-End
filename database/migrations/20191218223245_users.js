@@ -13,6 +13,10 @@ exports.up = function(knex) {
         .string('email', 255)
         .notNullable()
         .unique();
+
+      users
+        .string('name', 255)
+        .notNullable();
   
       users.string('date_created', 255).notNullable();
     });
