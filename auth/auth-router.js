@@ -26,7 +26,8 @@ router.post('/login', (req, res) => {
   db.findBy({ username })
     .then(user => {
       if (user && bcrypt.compareSync(password, user.password)) {
-        let token = generateToken(user);
+         const token = generateToken(user.id);
+         
         res
           .status(200)
           .json({
@@ -41,20 +42,9 @@ router.post('/login', (req, res) => {
       res.status(500).json({ message: 'Error logging in' });
     });
 });
-
-const generateToken = user => {
-  const payload = {
-    userid: user.id,
-    username: user.username
+  const generateToken = id => {
+    return jwt.sign({ id }, secret.jwtSecret, { expiresIn: '1d' });
   };
 
-  const options = {
-    expiresIn: "1h"
-  };
-
-  const token = jwt.sign(payload, secret.jwtSecrets, options);
-
-  return token;
-};
 
 module.exports = router;
