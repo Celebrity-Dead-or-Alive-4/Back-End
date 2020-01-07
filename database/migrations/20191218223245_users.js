@@ -7,7 +7,9 @@ exports.up = function(knex) {
         .notNullable()
         .unique();
   
-      users.string('password', 255).notNullable();
+      users
+      .string('password', 255)
+      .notNullable();
   
       users
         .string('email', 255)
