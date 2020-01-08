@@ -28,8 +28,10 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "helmet": "^3.20.0",
+    "heroku-cli": "^7.0.9",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.19.2",
+    "pg": "^7.17.0",
     "sqlite3": "^4.1.0"
   },
   "devDependencies": {
