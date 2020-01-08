@@ -24,20 +24,20 @@ module.exports = {
     },
     useNullAsDefault: true,
     migrations: {
-      directory: "./data/migrations"
+      directory: "./database/migrations"
     },
     seeds: {
-      directory: "./data/seeds"
+      directory: "./database/seeds"
     },
   },
   production: {
     client: 'pg',
     connection: prodDbConnection, // an object or a string
     migrations: {
-      directory: './data/migrations',
+      directory: './database/migrations',
     },
     seeds: {
-      directory: './data/seeds',
+      directory: './database/seeds',
     },
   },
 };
