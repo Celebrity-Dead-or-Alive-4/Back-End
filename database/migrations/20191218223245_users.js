@@ -20,7 +20,7 @@ exports.up = function(knex) {
         .string('name', 255)
         .notNullable();
   
-      users.string('date_created', 255).notNullable();
+        users.timestamp("date_created").notNullable().defaultTo(knex.fn.now());
     });
   };
   
