@@ -43,7 +43,7 @@ router.post('/login', (req, res) => {
     });
 });
   const generateToken = id => {
-    return jwt.sign({ id }, secret.jwtSecret, { expiresIn: '1d' });
+    return jwt.sign({ id }, secret.jwtSecret, { expiresIn: '1h' });
   };
 
 
