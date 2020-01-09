@@ -12,6 +12,7 @@ router.post('/register', (req, res) => {
     .then(id => {
       res.status(201).json(id);
     })
+       
     .catch(err => {
       res
         .status(500)
@@ -32,7 +33,8 @@ router.post('/login', (req, res) => {
           .status(200)
           .json({
             message: `Welcome ${username}`,
-            token: token
+            token: token,
+            userId: user.id
           });
       } else {
         res.status(401).json({ message: 'Invalid credentials' });
