@@ -1,9 +1,3 @@
-const localPgConnection = {
-  host: 'localhost',
-  database: 'dev',
-  user: 'Josh',
-  password: 'secret!',
-};
 const prodDbConnection = process.env.DATABASE_URL || localPgConnection;
 
 module.exports = {
