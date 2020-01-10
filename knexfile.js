@@ -1,4 +1,4 @@
-const prodDbConnection = process.env.DATABASE_URL || localPgConnection;
+const prodDbConnection = process.env.DATABASE_URL
 
 module.exports = {
   development: {
